@@ -248,7 +248,7 @@
           </div>
           <p id="feedback" class="feedback" style="display: none;">Please enter a valid URL</p>
         </div>
-        <div style="display:none;" class="theme-select-button" onclick="openModal()">Select Theme</div>
+        <div class="theme-select-button" onclick="openModal()">Select Theme</div>
         <div id="themeModal" class="modal">
           <div class="modal-content">
             <h2>Choose a Theme <p class="close-modal" onclick="closeModal()">&times;</p>
@@ -258,11 +258,25 @@
             </div>
           </div>
         </div>
+        <label for="theme">Select Theme:</label>
   <select name="theme" id="theme">
     <option value="losangles.css" <% if (user.theme === 'losangles.css') { %>selected<% } %>>losangles</option>
     <option value="losangelsnight.css" <% if (user.theme === 'losangelsnight.css') { %>selected<% } %>>losangelsnight</option>
     <option value="tree.css" <% if (user.theme === 'tree.css') { %>selected<% } %>>tree</option>
+    <option value="apartment.css" <% if (user.theme === 'apartment.css') { %>selected<% } %>>apartment</option>
+    <option value="beach.css" <% if (user.theme === 'beach.css') { %>selected<% } %>>beach</option>
+    <option value="bird.css" <% if (user.theme === 'bird.css') { %>selected<% } %>>bird</option>
+    <option value="cat.css" <% if (user.theme === 'cat.css') { %>selected<% } %>>cat</option>
+    <option value="default.css" <% if (user.theme === 'default.css') { %>selected<% } %>>default</option>
+    <option value="greens.css" <% if (user.theme === 'greens.css') { %>selected<% } %>>greens</option>
+    <option value="mountains.css" <% if (user.theme === 'mountains.css') { %>selected<% } %>>mountains</option>
+    <option value="nature.css" <% if (user.theme === 'nature.css') { %>selected<% } %>>nature</option>
+    <option value="photography.css" <% if (user.theme === 'photography.css') { %>selected<% } %>>photography</option>
+    <option value="sky.css" <% if (user.theme === 'sky.css') { %>selected<% } %>>sky</option>
+    <option value="valorant.css" <% if (user.theme === 'valorant.css') { %>selected<% } %>>valorant</option>
     <option value="xp.css" <% if (user.theme === 'xp.css') { %>selected<% } %>>xp</option>
+    <option value="yunus.css" <% if (user.theme === 'yunus.css') { %>selected<% } %>>yunus</option>
+
   </select>
       </div>
 
