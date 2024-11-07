@@ -43,9 +43,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.message === 'Click count updated') {
-            alert('Click count updated!');
           } else {
-            alert('Something went wrong.');
           }
         })
         .catch(error => {
