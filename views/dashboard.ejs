@@ -258,6 +258,13 @@
             </div>
           </div>
         </div>
+        <label for="theme">Select Theme:</label>
+  <select name="theme" id="theme">
+    <option value="losangles.css" <% if (user.theme === 'losangles.css') { %>selected<% } %>>losangles</option>
+    <option value="losangelsnight.css" <% if (user.theme === 'losangelsnight.css') { %>selected<% } %>>losangelsnight</option>
+    <option value="tree.css" <% if (user.theme === 'tree.css') { %>selected<% } %>>tree</option>
+    <option value="xp.css" <% if (user.theme === 'xp.css') { %>selected<% } %>>xp</option>
+  </select>
       </div>
 
 
