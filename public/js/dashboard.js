@@ -76,7 +76,9 @@ function addSocialLink() {
 // Sosyal Medya Linki Silme Fonksiyonu
 function removeSocialLink(index) {
     const linkDiv = document.getElementById(`link-${index}`);
-    linkDiv.remove();
+    if (linkDiv) {
+        linkDiv.remove();
+    }
 }
 
 // Tema Seçim Fonksiyonu
@@ -104,7 +106,7 @@ function selectTheme(theme, themeItem) {
 // Tema Listesini Doldurma
 function populateThemes() {
     const themeList = document.getElementById('themeList');
-    themeList.innerHTML = '';  // Mevcut listeyi temizle
+    themeList.innerHTML = ''; // Mevcut listeyi temizle
     themes.forEach((theme) => {
         const themeItem = document.createElement('div');
         themeItem.className = 'theme-item';
@@ -127,7 +129,7 @@ function openModal() {
     const modal = document.getElementById('themeModal');
     if (modal) {
         modal.style.display = 'flex';
-        populateThemes();  // Temalar yüklensin
+        populateThemes(); // Temalar yüklensin
     } else {
         console.error("Modal element with id 'themeModal' not found.");
     }
