@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= user.username %>'s Profile</title>
+  <link rel="stylesheet" href="/template/<%= user.theme %>"> <!-- Dynamically load theme -->
+  
+    
+</head>
+<body>
+  <!-- Background Sound -->
+  <audio id="background-audio" autoplay loop>
+    <source src="/sounds/dreamy.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="<%= user.profileImage %>" alt="Profile Image" class="profile-image">
+      <span class="name"><%= user.username %></span>
+      <span class="bio"><%= user.bio %></span>
+    </div>
+
+    <div class="social-links">
+      <% user.socialMedia.forEach(link => { %>
+        <div onclick="incrementClick('<%= user._id %>', '<%= link._id %>')" class="social-link">
+          <img class="favicon" src="<%= link.logo ? link.logo : 'default-logo.png' %>" alt="<%= link.platform %> favicon" />
+          <a href="<%= link.url %>" target="_blank"><%= link.platform %></a>
+          <span class="ellipsis" onclick="openModal('<%= link.url %>')">...</span>
+        </div>
+      <% }) %>
+    </div>
+    
+    <script>// Function to send the click increment request
+      function incrementClick(userId, socialMediaId) {
+        fetch(`/increment-click/${userId}/${socialMediaId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message === 'Click count updated') {
+            alert('Click count updated!');
+          } else {
+            alert('Something went wrong.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while updating the click count.');
+        });
+      }
+      </script>
+  </div>
+
+  <!-- Modal for copying the URL -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header" style="display: none;">
+        <a href="/" class="links-url"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338507_1280.png" alt=""></a>
+        <a href="/" class="links-url"><img src="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg?semt=ais_hybrid" alt=""></a>
+        <a href="/" class="links-url"><img src="https://img.freepik.com/premium-vector/new-twitter-x-logo-vector-twitter-x-sign-vector_952796-6.jpg?semt=ais_hybrid" alt=""></a>
+        <a href="/" class="links-url"><img src="https://seeklogo.com/images/T/telegram-logo-2A32756393-seeklogo.com.png" alt=""></a>
+        <a href="/" class="links-url"><img src="https://seeklogo.com/images/W/whatsapp-logo-0DBD89C8E2-seeklogo.com.png" alt=""></a>
+      </div>
+      <div class="modal-copy">
+        <input type="text" id="urlToCopy" readonly />
+        <button onclick="copyToClipboard()">Copy URL</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(url) {
+      document.getElementById('urlToCopy').value = url; // Set the input value to the URL
+      document.getElementById('myModal').style.display = "flex"; // Show the modal
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = "none"; // Hide the modal
+    }
+
+    function copyToClipboard() {
+      const copyText = document.getElementById('urlToCopy');
+      copyText.select(); // Select the input text
+      document.execCommand("copy"); // Execute the copy command
+      closeModal(); // Close the modal after copying
+    }
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.onclick = function(event) {
+      const modal = document.getElementById('myModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+<script>
+  // Yağmur damlası oluşturma fonksiyonu
+  function createRaindrop() {
+    const raindrop = document.createElement('div');
+    raindrop.classList.add('raindrop');
+    raindrop.style.left = Math.random() * window.innerWidth + 'px'; // Ekranın genişliğinde rastgele konum
+    raindrop.style.animationDuration = (Math.random() * 2 + 2) + 's'; // 2-4 saniye arası animasyon süresi
+    raindrop.style.opacity = Math.random() * 0.3 + 0.2; // Opaklığı hafifçe değişken
+    document.body.appendChild(raindrop);
+  
+    // Animasyon tamamlanınca damlayı kaldır
+    raindrop.addEventListener('animationend', () => {
+      raindrop.remove();
+    });
+  }
+  
+  // Belirli aralıklarla damlalar oluşturun (daha az sıklıkta)
+  setInterval(createRaindrop, 200);
+  </script>
+  
+</body>
+</html>

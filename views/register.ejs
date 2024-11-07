@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kayıt Ol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/auth.css">
+  <style></style>
+</head>
+<body>
+    <div class="auth">
+        <div class="auth-top">
+            <button id="loginBtn" onclick="toggleForm('login')">Login</button>
+            <button id="registerBtn" class="active" onclick="toggleForm('register')">Register</button>
+        </div>
+        <div class="auth-cont">
+            <div class="login">
+                <div class="auth-header">
+                    <span class="h1">Welcome back</span><br>
+                    <span class="p">Enter your credentials to access your account</span>
+                </div>
+                <form action="/login" method="POST">
+                    <div class="inp-div">
+                        <p>Email</p>
+                        <input type="email" name="email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="inp-div">
+                        <p>Password</p>
+                        <input type="password" name="password" placeholder="••••••••" required />
+                    </div>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+            <div class="register active"> 
+                <div class="auth-header">
+                    <span class="h1">Create an account</span><br>
+                    <span class="p">Fill in the information below to create your account</span>
+                </div>
+                <form action="/register" method="POST">
+                    <div class="inp-div">
+                        <p>Name</p>
+                        <input type="text" name="username" placeholder="John Doe" required />
+                    </div>
+                    <div class="inp-div">
+                        <p>Email</p>
+                        <input type="email" name="email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="inp-div">
+                        <p>Password</p>
+                        <input type="password" name="password" placeholder="••••••••" required />
+                    </div>
+                    <div class="inp-div">
+                        <p>Confirm Password</p>
+                        <input type="password" name="confirmPassword" placeholder="••••••••" required />
+                    </div>
+                    <button type="submit">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/register.js"></script>
+</body>
+</html>

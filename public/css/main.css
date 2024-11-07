@@ -1,0 +1,39 @@
+main {
+  margin-top: 180px;
+  margin-bottom: 210px;
+}
+
+main .text-1 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #0F172A;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+
+main .text-2 {
+  text-align: center;
+  font-size: 18px;
+  color: #334155;
+  margin-top: -65px;
+  line-height: 32px;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 120px;
+    margin-bottom: 150px;
+    padding: 0 20px;
+  }
+
+  main .text-1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  main .text-2 {
+    font-size: 16px;
+    margin-top: -40px;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,106 @@
+.organizes {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    margin-bottom: 90px;
+    background-color: #E8FFEC;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.organize-cont {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+.organize {
+    display: flex;
+    width: 280px;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+}
+
+.organize img {
+    height: 210px;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.organize-h1 {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    color: #141C2F;
+    margin-top: 10px; /* Add margin to separate title from the image */
+}
+
+.organize-info {
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #64748B;
+    margin-top: -10px;
+}
+
+.ornagize-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow items to wrap to a new line */
+    justify-content: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .organize {
+        width: 100%; /* Make organize container full-width */
+        max-width: 100%;
+    }
+
+    .organize img {
+        height: 180px; /* Reduce image height for smaller screens */
+        width: 100%;
+    }
+
+    .organize-h1 {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin-left: 15px;
+    }
+
+    .organize-info {
+        margin-left: 15px;
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .ornagize-list {
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    .organize img {
+        width: 100%;
+        height: 150px; /* Further reduce image height */
+    }
+
+    .organize-h1 {
+        font-size: 15px;
+        margin-left: 15px;
+    }
+
+    .organize-info {
+        font-size: 12px;
+        margin-left: 15px;
+        margin-top: -5px;
+    }
+}

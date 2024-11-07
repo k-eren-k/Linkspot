@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ana Sayfa</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/organize.css">
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="icon" type="image/png" href="/img/icons.png">
+
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logos">
+        <img src="/img/icons.png" class="logo" alt="">
+      </div>
+      <div class="menu-icon" onclick="toggleDropdown()">
+        <i class="fa fa-bars"></i>
+      </div>
+  
+      <div class="buttons">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/links">Links</a>
+      </div>
+      <div class="auth-buttons">
+        <a class="login" href="/login">Join us <i class="fa-regular fa-angle-right"></i></a>
+        <a class="register" href="/register">Contact us <i class="fa-regular fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div id="dropdownMenu" class="dropdown-menu">
+      <a href="/">Home</a>
+      <a href="/">About</a>
+      <a href="/">Links</a>
+      <a class="login" href="/">Join us <i class="fa-regular fa-angle-right"></i></a>
+      <a class="register" href="/">Contact us <i class="fa-regular fa-angle-right"></i></a>
+    </div>
+  </nav>
+  
+  
+  
+
+  <main>
+    <p class="text-1">Welcome to LinkSpot</p>
+    <p class="text-2">Your essential hub for personal links and themes.</p>
+  </main>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <img src="/svg/links.png" class="icon" alt="">
+      <h3>Popular Links</h3>
+      <p>Browse through the most visited links.</p>
+    </div>
+  
+    <div class="grid-item border-left-right">
+      <img src="/svg/star.png" class="icon" alt="">
+      <h3>Highly Rated</h3>
+      <p>Discover links that users love.</p>
+    </div>
+  
+    <div class="grid-item">
+      <img class="icon" src="/svg/curated.png" alt="">
+      <h3>Curated Categories</h3>
+      <p>Find links organized by specific themes.</p>
+    </div>
+
+    <div class="horizontal-border"></div>
+  
+    <div class="grid-item">
+      <img class="icon" src="/svg/share.png" alt="">
+      <h3>Shareable</h3>
+      <p>Easily share these links with others.</p>
+    </div>
+  
+    <div class="grid-item border-left-right">
+      <img class="icon" src="/svg/update.png" alt="">
+      <h3>Regular Updates</h3>
+      <p>Stay up-to-date with the latest links.</p>
+    </div>
+  
+    <div class="grid-item">
+      <img class="icon" src="/svg/community.png" alt="">
+      <h3>Community Picks</h3>
+      <p>Links chosen by the community.</p>
+    </div>
+  </div>
+
+  <div class="themes">
+    <div class="themes-top">
+      <p class="text-1">Explore Popular Themes</p>
+      <div class="themes-texts">
+        <p>Browse through a selection of themes that are trending.</p>
+      </div>
+    </div>
+    <div class="temelar">
+      <!-- Multiple themes container -->
+      <div class="themes-cont" style="position: relative;">
+        <div class="toggle-button">
+          <i class="fa fa-chevron-down"></i> <!-- Downward arrow icon -->
+        </div>
+        <iframe class="iframe" src="http://localhost:3000/Eren" title="Webview"></iframe>
+      </div>
+      <div class="themes-cont" style="position: relative;">
+        <div class="toggle-button">
+          <i class="fa fa-chevron-down"></i> <!-- Downward arrow icon -->
+        </div>
+        <iframe class="iframe" src="http://localhost:3000/Eren" title="Webview"></iframe>
+      </div>
+      <div class="themes-cont" style="position: relative;">
+        <div class="toggle-button">
+          <i class="fa fa-chevron-down"></i> <!-- Downward arrow icon -->
+        </div>
+        <iframe class="iframe" src="http://localhost:3000/Eren" title="Webview"></iframe>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="organizes">
+    <div class="organize-cont">
+      <div class="themes-top">
+        <p class="text-1">Organize Your Links</p>
+        <div class="themes-texts">
+          <p>Arrange Your Own Page Freely According to You</p>
+        </div>
+      </div>
+      <div class="ornagize-list">
+        <div class="organize">
+          <img src="https://cdn.wegic.ai/assets/onepage/ai/image/2d80cf68-8f81-474e-9cde-1957cdefdbd2.jpeg" alt="Organize İcons">
+          <p class="organize-h1">Work</p>
+          <p class="organize-info">Professional links</p>
+        </div>
+        <div class="organize">
+          <img src="https://cdn.wegic.ai/assets/onepage/ai/image/8e281ae7-e50c-484e-8419-895e1b27028f.jpeg" alt="Organize İcons">
+          <p class="organize-h1">Personal</p>
+          <p class="organize-info">Personal interests</p>
+        </div>
+        <div class="organize">
+          <img src="https://cdn.wegic.ai/assets/onepage/ai/image/c7126bf7-1ea6-4c4e-9e56-b74e27b0b7c0.jpeg" alt="Organize İcons">
+          <p class="organize-h1">Favorites</p>
+          <p class="organize-info">Most loved</p>
+        </div>
+        <div class="organize">
+          <img src="https://cdn.wegic.ai/assets/onepage/ai/image/92abd249-99fe-44d2-9a17-c0ca4f061309.jpeg" alt="Organize İcons">
+          <p class="organize-h1">Archived</p>
+          <p class="organize-info">Old but gold</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="start">
+    <div class="start-left">
+      <p class="start-h1">Start Your LinkSpot Journey</p>
+      <p class="start-p">Connect with your world through your most important links.</p>
+
+      <div class="start-buttons">
+        <a href="" class="get-start">Get Started</a>
+        <a href="" class="learn">Learn More <i class="fa-regular fa-angle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="start-right">
+      <img src="https://cdn.wegic.ai/assets/onepage/ai/image/c2412fc4-b803-4143-83f6-4cd11ea46560.jpeg" alt="Start İmage">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 LinkSpot</p>
+        <div class="footer-end">
+          <nav class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Links & Resources</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </nav>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        </div>
+    </div>
+</footer>
+
+
+  <script>
+    // JavaScript to handle the toggle functionality
+    const toggleButtons = document.querySelectorAll('.toggle-button');
+    const iframes = document.querySelectorAll('iframe');
+    
+    toggleButtons.forEach((button, index) => {
+      button.addEventListener('click', function(event) {
+        const iframe = iframes[index]; // Get the corresponding iframe
+        iframe.classList.toggle('expanded'); // Toggle the expanded class
+        this.style.display = 'none'; // Hide the toggle button after click
+        event.stopPropagation(); // Prevent event from bubbling up
+      });
+    });
+    function toggleDropdown() {
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Close dropdown if clicked outside
+document.addEventListener('click', function(event) {
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  const menuIcon = document.querySelector('.menu-icon');
+  
+  if (!dropdownMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+    dropdownMenu.style.display = 'none';
+  }
+});
+
+
+    // Listen for click events on the themes container to restore to original state
+    document.querySelectorAll('.themes-cont').forEach((container) => {
+      container.addEventListener('click', function(event) {
+        // Check if clicked target is the container and not the toggle button
+        if (!event.target.classList.contains('toggle-button')) {
+          // Collapse all iframes and show all toggle buttons
+          toggleButtons.forEach((button, index) => {
+            const iframe = iframes[index];
+            iframe.classList.remove('expanded'); // Remove expanded class
+            button.style.display = 'flex'; // Show the toggle button again
+          });
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

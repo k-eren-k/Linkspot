@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"/>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <style>
+    .social-name{
+      width: 25%;
+      height: 50px;
+      border-radius: 20px;
+      padding-left: 15px;
+      border: 1px solid #CCC;
+      margin-top: 5.5px;
+    }
+
+    .social-name:focus{
+      border-color: #59BD7E;
+      outline: none;
+      box-shadow: 0 0 0 2px #BCE5CB;
+    }
+
+    .social-url{
+      width: calc(100% - 25% - 8px - 85.5px);
+      height: 50px;
+      border-radius: 20px;
+      padding-left: 15px;
+      border: 1px solid #CCC;
+      margin-top: 5.5px;
+    }
+
+    .social-url:focus{
+      border-color: #59BD7E;
+      outline: none;
+      box-shadow: 0 0 0 2px #BCE5CB;
+    }
+
+    .delete-soc{
+      width: 50px;
+      cursor: pointer;
+      height: 50px;
+      border-radius: 20px;
+      border: 1px solid #CCC;
+      background-color: transparent;
+    }
+
+    .delete-soc:hover{
+      border: 1px solid #bd5959;
+      outline: none;
+      box-shadow: 0 0 0 2px #e5bcbc;
+    }
+
+    .dash-bottom-items{
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .social-media-links{
+      
+      width: 100%;
+    }
+
+    .social-media-section{
+    max-height: 340px;
+    overflow-y: scroll;
+    }
+
+    .social-link{
+      width: 100%;
+    }
+
+    .statistics-container {
+      max-width: 900px;
+      margin: 0 auto;
+  
+
+
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .statistics-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .statistics-header h3 {
+      font-size: 28px;
+      margin: 0;
+      color: #4a90e2;
+    }
+
+    .chart-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .chart {
+      width: 100%;
+      max-width: 400px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart canvas {
+      width: 100% !important;
+      height: 300px !important;
+    }
+
+    .tab-content{
+      width: 100%;
+    }
+    .social-media-item {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    height: 55px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    padding-left: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.1s ease;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    gap: 7.5px;
+    transition: all 0.15s ease;
+}
+
+.social-media-item:hover{
+  transform: scale(1.01);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.027);
+}
+
+.social-media-item:hover a{
+  color: black;
+}
+
+.social-media-item img{
+  border-radius: 100%;
+}
+
+.social-media-item a{
+  transition: all 0.15s ease;
+  font-size: 15.5px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.788);
+  text-decoration: none;
+}
+
+.social-media-item span{
+  margin-left: auto;
+  color: black;
+  cursor: pointer;
+  font-size: 15.5px;
+  font-weight: 400;
+  margin-right: 25px;
+}
+
+.total{
+  border: 1px solid #cccc;
+  width: calc(50% - 65px);
+  padding: 30px;
+  border-radius: 20px ;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+
+.total:hover{
+  transform: scale(1.008);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.027);
+}
+
+.total .text{
+  font-size: 16px;
+  color: #050b11;
+  font-weight: 600;
+}
+
+.total .count{
+  font-size: 24px;
+  font-weight: 700;
+  color: #0c1824;
+}
+
+.total-all{
+  display: flex;
+  gap: 10px;
+}
+
+.soc-ista {
+  margin-top: 20px;
+}
+
+#social-media-links {
+    margin-top: 35px;
+    max-height: 440px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="dash">
+    <div class="dashboard-top">
+      <div class="top-left">
+        <img src="<%= user.profileImage %>" alt="Profile" class="pp">
+        <div class="top-right">
+          <p class="text-1"><%= user.username %></p>
+          <p class="text-2"><%= user.bio %></p>
+          <div class="basarimlar">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-container">
+      <div class="tabs">
+        <button class="tab active" onclick="changeTab(0)">Edit</button>
+        <button class="tab" onclick="changeTab(1)">Statistics</button>
+      </div>
+    </div>
+    <form action="/dashboard/edit-profile" class="edits" id="edits" method="POST">
+    <div class="dash-items">
+      <div class="items-info">
+        <div class="textarea-container">
+          <textarea id="modernTextarea" class="textarea" name="bio" maxlength="125" oninput="updateCharacterCount(this)"><%= user.bio %></textarea>
+          <div id="characterCount" class="character-count">0/125</div>
+        </div>
+        <div class="container">
+          <div class="input-group">
+            <input type="text" name="profileImage" id="profileImage" value="<%= user.profileImage %>" class="input" placeholder="Your Profile URL" oninput="validateUrl()">
+          </div>
+          <p id="feedback" class="feedback" style="display: none;">Please enter a valid URL</p>
+        </div>
+        <button class="theme-select-button" onclick="openModal()">Select Theme</button>
+        <div id="themeModal" class="modal">
+          <div class="modal-content">
+            <h2>Choose a Theme <p class="close-modal" onclick="closeModal()">&times;</p>
+            </h2>
+            <input type="text" id="themeSearchInput" class="theme-search-input" placeholder="Search themes..." oninput="filterThemes()">
+            <div id="themeList">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="dash-bottom-items">
+      <div id="social-media-links">
+        <h3>Social Media Links:</h3>
+        <% user.socialMedia.forEach((link, index) => { %>
+        <div class="social-link" id="link-<%= index %>">
+          <input type="text" name="socialMedia[<%= index %>][platform]" placeholder="Platform" class="social-name" value="<%= link.platform %>">
+          <input type="text" name="socialMedia[<%= index %>][url]" placeholder="URL" class="social-url" value="<%= link.url %>">
+          <button type="button" class="delete-soc" onclick="removeSocialLink(<%= index %>)"><i class="fa-light fa-trash"></i></button>
+        </div>
+        <% }) %>
+      </div>
+
+      <button type="button" class="buttons-socsav" onclick="addSocialLink()">Add Social Link</button>
+      <button type="submit" class="buttons-socsav" >Save Profile</button>
+    </div>
+  </form>
+  <div class="tab-content" id="statisticsTab" style="display: none;">
+    <h3>Statistics</h3>
+    <div class="total-all">
+      <div class="total">
+        <p class="text">Total Views</p>
+        <p class="count">+<%= user.totalViews %></p>
+      </div>
+      <div class="total">
+        <p class="text">Daily Views</p>
+        <p class="count">+<%= user.dailyViews %></p>
+      </div>
+    </div>
+  
+    <h4 class="soc-ista">Social Media Click Counts:</h4>
+    <div class="social-media-section">
+      <% user.socialMedia.forEach(link => { %>
+        <div class="social-media-item">
+          <img class="social-media-logo" src="<%= link.logo || 'default-logo.png' %>" alt="<%= link.platform %> logo" width="30" height="30">
+          <a href="<%= link.url %>" target="_blank"><%= link.platform %></a>
+          <span><%= link.clicks %></span>
+        </div>
+      <% }) %>
+    </div>
+    
+  </div>
+  
+
+  <script src="/js/dashboard.js"></script>
+</body>
+<script>const modal = document.querySelector('.modal');
+  const openButton = document.querySelector('#openModalButton');
+  const closeButton = document.querySelector('.close-modal');
+  
+  openButton.addEventListener('click', () => {
+      modal.style.display = 'flex';  // Modal'ı aç
+  });
+  
+  closeButton.addEventListener('click', () => {
+      modal.style.display = 'none';  // Modal'ı kapat
+  });
+  </script>
+<script>
+  function changeTab(tabIndex) {
+    const tabs = document.querySelectorAll('.tab');
+    const editSection = document.querySelector('.edits');
+    const statisticsSection = document.querySelector('#statisticsTab');
+
+    // Remove 'active' class from all tabs and hide both sections
+    tabs.forEach(tab => tab.classList.remove('active'));
+    editSection.style.display = 'none';
+    statisticsSection.style.display = 'none';
+
+    // Show the section corresponding to the clicked tab
+    if (tabIndex === 0) {
+      tabs[0].classList.add('active');
+      editSection.style.display = 'block';
+    } else if (tabIndex === 1) {
+      tabs[1].classList.add('active');
+      statisticsSection.style.display = 'block';
+    }
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</html>

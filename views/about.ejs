@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ana Sayfa</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/organize.css">
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="icon" type="image/png" href="/img/icons.png">
+  <style>
+
+
+    .about{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom:  90px;
+    }
+
+    .about-left{
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .about-right{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-right img{
+        height: 100%;
+        width: 100%;
+        margin-left: 35px;
+        object-fit: cover;
+        border-radius: 50px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.027);
+    }
+    .infos{
+        margin-top: 7.5px;
+        margin-bottom: 7.5px;
+    }
+    .infos-top{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .infos-top img{
+        height: 20PX;
+        width: 20PX;
+        object-fit: contain;
+        margin-right: 5px;
+    }
+
+    .infos-top p{
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .infos-text{
+        font-size: 14.5px;
+        width: 90%;
+        margin-top: -10px;
+        color: #4B5563;
+    }
+
+    .story{
+        color: #1DB954;
+        font-size: 13.5px;
+    }
+
+    .about-left .h1{
+        font-size: 34px;
+        font-weight: 600;
+        margin-top: 0px;
+    }
+
+    .about-left .text{
+        width: 90%;
+        font-size: 16px;
+        color: #374151;
+    }
+
+    .about-info{
+        width: 100%;
+        height: 415px;
+        background: url(/img/about-back.jpeg);
+        background-size: cover; 
+        border-radius: 8px;
+        margin-bottom: 90px;
+        background-position: center; 
+        background-repeat: no-repeat; 
+    }
+
+    .info-container{
+        width: 100%;
+        padding: 80px;
+        border-radius: 8px;
+        height: 100%;
+        background-color: #176a3cc0;
+    }
+
+    .story-about{
+        color: #3DC769;
+        font-size: 16.5px;
+        font-weight: 600;
+    }
+
+    .h1-about{
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: -0.9px;
+        color: white;
+        margin-top: -0px;
+    }
+
+    .p-about{
+        font-size: 17px;
+        margin-top: -20px;
+        color: #D1D5D8;
+    }
+  </style>
+
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logos">
+        <img src="/img/icons.png" class="logo" alt="">
+      </div>
+      <div class="menu-icon" onclick="toggleDropdown()">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="buttons">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/links">Links</a>
+      </div>
+      <div class="auth-buttons">
+        <a class="login" href="/">Join us <i class="fa-regular fa-angle-right"></i></a>
+        <a class="register" href="/">Contact us <i class="fa-regular fa-angle-right"></i></a>
+      </div>
+    </div>
+  
+    <!-- Dropdown Menu for Mobile -->
+    <div id="dropdownMenu" class="dropdown-menu">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/">Links</a>
+      <a class="login" href="/login">Join us <i class="fa-regular fa-angle-right"></i></a>
+      <a class="register" href="/register">Contact us <i class="fa-regular fa-angle-right"></i></a>
+    </div>
+  </nav>
+  
+  
+  
+
+  <main>
+    <p class="text-1">Discover My Journey</p>
+    <p class="text-2">Explore the story behind LinkSpot and my personal branding journey.</p>
+  </main>
+
+  <div class="about">
+    <div class="about-left">
+        <p class="story">My Story</p>
+        <p class="h1">Achievements</p>
+        <p class="text" style="margin-top: -30px; margin-bottom: 30px;">From humble beginnings to creating LinkSpot, my journey is filled with passion and dedication.</p>
+        <p class="text" style=" margin-bottom: 10pxpx;">LinkSpot was born out of a need to simplify and organize essential links in a minimalist format. It's a reflection of my personal growth and achievements.</p>
+        <div class="infos">
+            <div class="infos-top">
+                <img src="/svg/links.png" alt="İmage">
+                <p>Connecting Links</p>
+            </div>
+            <div class="infos-text">
+                Streamlining access to essential links for personal and professional use.
+            </div>
+        </div>
+        <div class="infos">
+            <div class="infos-top">
+                <img src="/svg/star.png" alt="İmage">
+                <p>Personal Highlights</p>
+            </div>
+            <div class="infos-text">
+                Showcasing key milestones and achievements throughout my career.
+            </div>
+        </div>
+        <div class="infos">
+            <div class="infos-top">
+                <img src="/svg/roket.png" alt="İmage">
+                <p>Future Goals</p>
+            </div>
+            <div class="infos-text">
+                Continuing to innovate and expand LinkSpot's capabilities.
+            </div>
+        </div>
+     
+        <p class="h1" style="margin-top: 35px;">Achievements</p>
+        <p class="text" style="margin-top: -30px;">From humble beginnings to creating LinkSpot, my journey is filled with passion and dedication.</p>
+
+    </div>
+    <div class="about-right">
+        <img src="/img/about.jpeg" alt="About İmage">
+    </div>
+  </div>
+
+  <div class="about-info">
+    <div class="info-container">
+        <div class="story-about">Milestones</div>
+        <p class="h1-about">Celebrating Simplicity and Impact</p>
+        <p class="p-about">LinkSpot has been a journey of connecting and simplifying the digital experience.</p>
+    </div>
+  </div>
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 LinkSpot</p>
+        <div class="footer-end">
+          <nav class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Links & Resources</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </nav>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        </div>
+    </div>
+</footer>
+
+
+  
+</body>
+</html>
