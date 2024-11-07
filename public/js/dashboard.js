@@ -100,28 +100,8 @@ function selectTheme(theme, themeItem) {
     themeItem.classList.add('active');
     themeItem.querySelector('.checkmark').style.visibility = 'visible';
 }
-// Modal Açma Fonksiyonu
-function openModal() {
-    const modal = document.getElementById('themeModal');
-    if (modal) {
-        modal.style.display = 'flex';
-        populateThemes();  // Temaları yükle
-    } else {
-        console.error("Modal element with id 'themeModal' not found.");
-    }
-}
 
-// Modal Kapatma Fonksiyonu
-function closeModal() {
-    const modal = document.getElementById('themeModal');
-    if (modal) {
-        modal.style.display = 'none';
-    } else {
-        console.error("Modal element with id 'themeModal' not found.");
-    }
-}
-
-// Tema Listesini Doldurma Fonksiyonu
+// Tema Listesini Doldurma
 function populateThemes() {
     const themeList = document.getElementById('themeList');
     themeList.innerHTML = '';  // Mevcut listeyi temizle
@@ -140,6 +120,27 @@ function populateThemes() {
 
         themeList.appendChild(themeItem);
     });
+}
+
+// Modal'ı Açma
+function openModal() {
+    const modal = document.getElementById('themeModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        populateThemes();  // Temalar yüklensin
+    } else {
+        console.error("Modal element with id 'themeModal' not found.");
+    }
+}
+
+// Modal'ı Kapatma
+function closeModal() {
+    const modal = document.getElementById('themeModal');
+    if (modal) {
+        modal.style.display = 'none';
+    } else {
+        console.error("Modal element with id 'themeModal' not found.");
+    }
 }
 
 // Tema Arama Fonksiyonu
